@@ -1,8 +1,7 @@
 import React from 'react'
-import Hero from "../assets/images/something.png"
+import Hero from "../assets/images/notify.png"
 
-function Home() {
-
+function Notification() {
   return (
     <section>
         <div>
@@ -12,4 +11,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Notification

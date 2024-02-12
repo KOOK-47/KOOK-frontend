@@ -28,14 +28,14 @@ function Nav({ mobileNav, toggleNav }) {
           <h3>Messages</h3>
       </NavLink>
 
-      <NavLink to="unavailable" 
+      <NavLink to="notification" 
         className="nav-dashboard" 
         onClick={toggleNav}>
           
           <h3>Notifications</h3>
       </NavLink>
 
-      <NavLink to="unavailable" 
+      <NavLink to="create" 
         className="nav-dashboard" 
         onClick={toggleNav}>
          

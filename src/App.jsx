@@ -12,6 +12,9 @@ import SplashScreen from "./components/SplashScreen";
 import Error from "./components/Error";
 import Unavailable from "./components/Unavailable";
 import { userAuth } from "./context/AuthContext";
+import Home from "./components/Home";
+import Create from "./components/Create";
+import Notification from "./components/Notification";
 
 
 function App() {
@@ -27,8 +30,10 @@ function App() {
       <Route path="signup" element={<SignUp/>} />
       <Route element={<Private />}>
         <Route path="dashboard" element={<Dashboard/>}>
-        <Route index element={<SplashScreen/>} />
+        <Route index element={<Home/>} />
         <Route path="unavailable" element={<Unavailable/>} />
+        <Route path="create" element={<Create/>} />
+        <Route path="notification" element={<Notification/>} />
         </Route>
       </Route>
       </Route>

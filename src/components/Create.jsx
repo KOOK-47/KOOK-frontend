@@ -1,8 +1,8 @@
 import React from 'react'
-import Hero from "../assets/images/something.png"
+import Hero from "../assets/images/create.png"
 
-function Home() {
 
+function Create() {
   return (
     <section>
         <div>
@@ -12,4 +12,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Create
