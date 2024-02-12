@@ -136,6 +136,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { userAuth } from '../context/AuthContext';
+import "../assets/styles/SignUp.css";
+import Onboard from "../assets/images/onboard.png"
+import Onboard2 from "../assets/images/Logo.png"
 
 
 function SignUp() {
@@ -207,100 +210,107 @@ function SignUp() {
   }
 
   return (
-    <section className='forms'>
+    <section className='container'>
+      <section className='side-hero'>
+        <div className='side-box'>
+          <img src={Onboard} alt="onboarding" />
+        </div>
+      </section>
+      <section className='form-area'>
+        <div>
+          <img src={Onboard2} alt="onboarding" />
+        </div>
+        <section className='forms'>
+            <h1 className='form-header'>Create Your KOOK Account</h1>
 
-    <h1 className='form-header'>Sign-Up for an Account</h1>
+            <form onSubmit={handleSignUp}>
 
-    <form onSubmit={handleSignUp}>
+              {error && <h5 className='error red'>{error}</h5>}
+              {msg && <h5 className='success'>{msg}</h5>}
 
-      {error && <h5 className='error red'>{error}</h5>}
-      {msg && <h5 className='success'>{msg}</h5>}
+              <div className='input-holder'>
+              <input 
+                type="text" 
+                placeholder="First Name" 
+                name="firstname" 
+                id="firstname" 
+                className='input'
+                onChange={formChanges}
+                value={formDetails.firstname}
+                required />
+              </div>
 
-      <div className='input-holder'>
-      <label htmlFor="firstname">First Name</label>
-      <input 
-        type="text" 
-        placeholder="First Name" 
-        name="firstname" 
-        id="firstname" 
-        className='input'
-        onChange={formChanges}
-        value={formDetails.firstname}
-        required />
-      </div>
+              <div className='input-holder'>
+              <input 
+                type="text" 
+                placeholder="Last Name" 
+                name="lastname" 
+                id="lastname" 
+                className='input'
+                onChange={formChanges}
+                value={formDetails.lastname}
+                required />
+              </div>
 
-      <div className='input-holder'>
-      <label htmlFor="lastname">Last Name</label>
-      <input 
-        type="text" 
-        placeholder="Last Name" 
-        name="lastname" 
-        id="lastname" 
-        className='input'
-        onChange={formChanges}
-        value={formDetails.lastname}
-        required />
-      </div>
+              <div className='input-holder'>
+              <label htmlFor="role">Role</label>
+              <select name="role" id="role" value={formDetails.role} onChange={formChanges} required>
+                <option value="private_chef">Private Chef</option>
+                <option value="individual">Individual</option>
+                <option value="catering_business">Catering Business</option>
+              </select>
+              </div>
 
-      <div className='input-holder'>
-      <label htmlFor="role">Role</label>
-      <select name="role" id="role" value={formDetails.role} onChange={formChanges} required>
-        <option value="private_chef">Private Chef</option>
-        <option value="individual">Individual</option>
-        <option value="catering_business">Catering Business</option>
-      </select>
-      </div>
+              <div className='input-holder'>
+              <input 
+                type="email" 
+                placeholder="Email ID" 
+                name="email" 
+                id="email" 
+                className='input'
+                onChange={formChanges}
+                value={formDetails.email}
+                required />
+              </div>
 
-      <div className='input-holder'>
-      <label htmlFor="email">Email</label>
-      <input 
-        type="email" 
-        placeholder="E-mail" 
-        name="email" 
-        id="email" 
-        className='input'
-        onChange={formChanges}
-        value={formDetails.email}
-        required />
-      </div>
+              <div className='input-holder'>
+              <input 
+                type="password" 
+                placeholder="Password" 
+                name="password" 
+                id="password" 
+                className='input'
+                onChange={formChanges}
+                value={formDetails.password}
+                required
+                minLength='6'
+                maxLength='18' />
+              </div>
 
-      <div className='input-holder'>
-      <label htmlFor="password">Password</label>
-      <input 
-        type="password" 
-        placeholder="Password" 
-        name="password" 
-        id="password" 
-        className='input'
-        onChange={formChanges}
-        value={formDetails.password}
-        required
-        minLength='6'
-        maxLength='18' />
-      </div>
+              <div className='input-holder'>
+              <input 
+                type="password" 
+                placeholder="Enter Password Again" 
+                name="passwordConfirm" 
+                id="confirm-pw" 
+                className='input'
+                onChange={formChanges}
+                value={formDetails.passwordConfirm}
+                required
+                minLength='6'
+                maxLength='18' />
+              </div>
 
-      <div className='input-holder'>
-      <label htmlFor="confirm-pw">Confirm Password</label>
-      <input 
-        type="password" 
-        placeholder="Enter Password Again" 
-        name="passwordConfirm" 
-        id="confirm-pw" 
-        className='input'
-        onChange={formChanges}
-        value={formDetails.passwordConfirm}
-        required
-        minLength='6'
-        maxLength='18' />
-      </div>
+              <button className="submit" type="submit">{action ? 'SIGNING UP...' : 'SIGN UP'}</button>
 
-      <button type="submit">{action ? 'SIGNING UP...' : 'SIGN UP'}</button>
+              <div className='optional'>
+                <p>Already have an account? <Link to="/login">Login</Link></p>
+              </div>
+            </form>
+        </section>
+      </section>
+    </section>
 
-      <div className='optional'>
-        <p>Already have an account? <Link to="/login">Login</Link></p>
-      </div>
-    </form>
-  </section>
   );
 }
 

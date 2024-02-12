@@ -91,6 +91,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { userAuth } from '../context/AuthContext';
+import "../assets/styles/SignUp.css";
+import Onboard from "../assets/images/onboard.png"
+import Onboard2 from "../assets/images/Logo.png"
 
 function Login() {
 
@@ -147,48 +150,58 @@ function Login() {
 }
 
   return (
-    <section className='forms'>
-
-    <h1 className='form-header'>Login to Your Account</h1>
-
-    <form onSubmit={handleLogin}>
-
-      {error && <h5 className='error red'>{error}</h5>}
-
-      <div className='input-holder'>
-      <label htmlFor="email">Email</label>
-      <input 
-        type="email" 
-        placeholder="E-mail" 
-        name="email" 
-        id="email" 
-        className='input'
-        onChange={formChanges}
-        value={formDetails.email}
-        required />
+    <section className='container'>
+    <section className='side-hero'>
+      <div className='side-box'>
+        <img src={Onboard} alt="onboarding" />
       </div>
-
-      <div className='input-holder'>
-      <label htmlFor="password">Password</label>
-      <input 
-        type="password" 
-        placeholder="Password" 
-        name="password" 
-        id="password" 
-        className='input'
-        onChange={formChanges}
-        value={formDetails.password}
-        required
-        minLength='6'
-        maxLength='18' />
+    </section>
+    <section className='form-area'>
+      <div>
+        <img src={Onboard2} alt="onboarding" />
       </div>
+      <section className='forms'>
 
-      <button type="submit">{action ? 'LOGGING IN...' : 'LOGIN'}</button>
+        <h1 className='form-header'>Login to Your KOOK Account</h1>
 
-      <div className='optional'>
-          <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
-      </div>
-    </form>
+        <form onSubmit={handleLogin}>
+
+          {error && <h5 className='error red'>{error}</h5>}
+
+          <div className='input-holder'>
+          <input 
+            type="email" 
+            placeholder="E-mail" 
+            name="email" 
+            id="email" 
+            className='input'
+            onChange={formChanges}
+            value={formDetails.email}
+            required />
+          </div>
+
+          <div className='input-holder'>
+          <input 
+            type="password" 
+            placeholder="Password" 
+            name="password" 
+            id="password" 
+            className='input'
+            onChange={formChanges}
+            value={formDetails.password}
+            required
+            minLength='6'
+            maxLength='18' />
+          </div>
+
+          <button className='submit' type="submit">{action ? 'LOGGING IN...' : 'LOGIN'}</button>
+
+          <div className='optional'>
+              <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+          </div>
+        </form>
+      </section>
+    </section>
   </section>
   )
 }

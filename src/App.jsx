@@ -25,7 +25,9 @@ function App() {
       <Route path="splashscreen" element={<SplashScreen/>} />
       <Route path="signup" element={<SignUp/>} />
       <Route element={<Private />}>
-        <Route path="dashboard" element={<Dashboard/>} />
+        <Route path="dashboard" element={<Dashboard/>}>
+        <Route index element={<SplashScreen/>} />
+        </Route>
       </Route>
       </Route>
     ))

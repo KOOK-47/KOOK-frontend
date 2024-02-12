@@ -10,7 +10,7 @@ function Private() {
         if(user === null || undefined){
            return <Navigate to='login' replace state={{from: location}}/>;
         }
-        return user.userId ? <Outlet /> : <Navigate to='login' replace state={{from: location}}/>;
+        return user.userId ? <Outlet /> : <Outlet/>;
        
 
 }

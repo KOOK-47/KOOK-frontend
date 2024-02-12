@@ -19,9 +19,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  background-color: #f6f6f6;
-}
 
 nav {
   display: flex;
