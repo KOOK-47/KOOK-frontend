@@ -1,12 +1,13 @@
 import React from 'react'
+import Hero from "../assets/images/unavailable.png"
 
 function Unavailable() {
   return (
-    <div>
-        <h1>
-            Sorry, This page is unavailable at the moment
-        </h1>
-    </div>
+    <section>
+        <div>
+            <img src={Hero} alt="Hero"/>
+        </div>
+    </section>
   )
 }
 
