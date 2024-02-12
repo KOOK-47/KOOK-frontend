@@ -6,7 +6,7 @@ const SplashScreen = () => {
   return (
     <div className='splash'>
         <Link to='/signup'> <button>Kook</button></Link>
-        <button>Klient</button>
+        <Link to='/signup'> <button>Klient</button></Link>
     </div>
   )
 }
