@@ -18,56 +18,56 @@ function Nav({ mobileNav, toggleNav }) {
         onClick={toggleNav}
         end>
       
-          <h3>Balance</h3>
+          <h3>Home</h3>
       </NavLink>
 
-      <NavLink to="transactions" 
+      <NavLink to="unavailable" 
         className="nav-dashboard" 
         onClick={toggleNav}>
           
-          <h3>Transactions</h3>
+          <h3>Messages</h3>
       </NavLink>
 
-      <NavLink to="transactions" 
+      <NavLink to="unavailable" 
         className="nav-dashboard" 
         onClick={toggleNav}>
           
-          <h3>Transactions</h3>
+          <h3>Notifications</h3>
       </NavLink>
 
-      <NavLink to="transactions" 
+      <NavLink to="unavailable" 
         className="nav-dashboard" 
         onClick={toggleNav}>
          
-          <h3>Transactions</h3>
+          <h3>Create</h3>
       </NavLink>
 
-      <NavLink to="transactions" 
+      <NavLink to="unavailable" 
         className="nav-dashboard" 
         onClick={toggleNav}>
        
-          <h3>Transactions</h3>
+          <h3>Settings</h3>
       </NavLink>
 
-      <NavLink to="wallet" 
+      <NavLink to="unavailable" 
         className="nav-dashboard" 
         onClick={toggleNav}>
        
-          <h3>Wallet</h3>
+          <h3>Profile</h3>
       </NavLink>
 
-      <NavLink to="rates" 
+      <NavLink to="unavailable" 
         className="nav-dashboard" 
         onClick={toggleNav}>
       
-          <h3>Exchange Rates</h3>
+          <h3>History</h3>
       </NavLink>
 
-      <NavLink to="settings" 
+      <NavLink to="unavailable" 
         className="nav-dashboard" 
         onClick={toggleNav}>
     
-          <h3>Settings</h3>
+          <h3>Explore</h3>
       </NavLink>
     </nav>
   )

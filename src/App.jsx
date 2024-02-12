@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard";
 import Private from "./protected/Private";
 import SplashScreen from "./components/SplashScreen";
 import Error from "./components/Error";
+import Unavailable from "./components/Unavailable";
 import { userAuth } from "./context/AuthContext";
 
 
@@ -27,6 +28,7 @@ function App() {
       <Route element={<Private />}>
         <Route path="dashboard" element={<Dashboard/>}>
         <Route index element={<SplashScreen/>} />
+        <Route path="unavailable" element={<Unavailable/>} />
         </Route>
       </Route>
       </Route>
